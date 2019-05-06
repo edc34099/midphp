@@ -1,0 +1,45 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./bg.svg);
+    background-size: cover;
+    color: azure;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+li{
+
+    list-style-type:none;
+}
+#top li{
+    list-style-type:none;
+    display: inline;
+}
+
+#top{
+    position: relative;
+    width: 1500px;
+    height: 50px;
+    background-color: rgba(23, 0, 78, 0.774);
+    
+}
+#mid{
+    position: relative;
+}
+#sidebar{
+    position: relative;
+    width: 300px;
+    height: 900px;
+    background-color: rgba(23, 0, 78, 0.774);
+    float: left;
+    
+}
+#content{
+    position: relative;
+    width: 1200px;
+    height: 900px;
+    background-color: rgba(0, 73, 78, 0.774);
+    float: left;
+}
