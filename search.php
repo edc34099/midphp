@@ -11,10 +11,10 @@ $employeeDep = $_POST['employeeDep'];
     $employeeSearch = $pdo->query($sqlemployee)->fetchAll();
 ?>
 <?php
+$num=0;
     foreach($employeeSearch as  $value){
         $arr[]=$value['姓名'];
-        $arr2[]=$_POST['delete'];
-        
+                
 ?>
 <form action="index.php?do=employee" method="post">
     <tr>
@@ -27,11 +27,22 @@ $employeeDep = $_POST['employeeDep'];
         <td><?=$value['郵遞區號'];?></td>
         <td><?=$value['目前月薪資'];?></td>
         <td><?=$value['年假天數'];?></td>
-        <td><input type="submit" name="delete" value="刪除"></td>        
+    <?php
+    echo    "<td><input type='submit' name='delete".$num."' value='刪除'></td>";
+    $num++;
+    $delete[]='delete'.$num;
+    ?>
+    
     </tr>  
 </form>
 <?php
 }
-print_r($arr);
-print_r($arr2);
+print_r($delete);
+
+
+    
+
+  
+
+
 ?>
