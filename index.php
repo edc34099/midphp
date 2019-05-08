@@ -43,6 +43,10 @@
                 case "employee":
                 include "employee.php";
                 break;
+                case "increase":
+                include "increase.php";
+                break;
+
             }
         ?>
         </div>

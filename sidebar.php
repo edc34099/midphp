@@ -14,7 +14,13 @@
 歷年產品銷售狀況（可依年度顯示不同年份的產品銷售狀況）
 業務部銷售狀況（可依年度顯示不同年份的部門銷售狀況） -->
 <ul>
-    <li><a href="index.php?do=employee">員工管理</a></li>
+    <li>員工管理</li>
+        <ul>
+            <li><a href="index.php?do=increase">新增員工資料</a></li>
+            <li>刪除員工資料</li>
+            <li><a href="index.php?do=employee">查詢員工資料</a></li>
+            <li>修改員工資料</li>
+        </ul>
     <li>客戶管理</li>
     <li>歷年產品銷售</li>
     <li>業務部銷售</li>
