@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="wrap">
     <div id="top">
         <?php
         include_once "head.php";
@@ -39,9 +40,13 @@
                 case "reg":
                 include "reg.php";
                 break;
+                case "employee":
+                include "employee.php";
+                break;
             }
         ?>
         </div>
     </div>
+    </div>   
 </body>
 </html>

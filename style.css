@@ -9,6 +9,15 @@ a{
     color: white;
     text-decoration: none;
 }
+#wrap{
+    position:relative;
+    width: 1500px;
+    height: 950px;
+    top: 50%;
+    left: 50%;
+    margin-top: -475px;
+    margin-left: -750px;
+    }
 li{
 
     list-style-type:none;
