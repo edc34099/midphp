@@ -18,7 +18,8 @@
         <td>年假天數</td>
     </tr>
 <?php
-if(isset($_POST["search"])){
+if(!empty($_POST["search"])){
+    $_SESSION['search']=$_POST["search"];
     $employeeDep = $_POST['employeeDep'];
     $employeeCity = $_POST['employeeCity'];
     if(empty($employeeDep)){
@@ -29,12 +30,17 @@ if(isset($_POST["search"])){
         $sqlemployee = "select * from `employee` where `部門代號`='$employeeDep' && `縣市`='$employeeCity'";
     }
     $employeeSearch = $pdo->query($sqlemployee)->fetchAll();
-
-?>
-<?php
+}
 $num=0;
+function delete($i){
+    $num='delete'.$i;
+    if(isset($_POST["$i"])){
+        echo $num;
+        }    
+    }
+if(!empty($_SESSION['search'])){
     foreach($employeeSearch as  $value){
-        
+        $name[]=$value['姓名'];
                 
 ?>
 <form action="index.php?do=employee" method="post">
@@ -48,33 +54,52 @@ $num=0;
         <td><?=$value['郵遞區號'];?></td>
         <td><?=$value['目前月薪資'];?></td>
         <td><?=$value['年假天數'];?></td>
+        <td><input type='button' name="delete[]" value='刪除'></td>
+        </tr>  
+</form>
+        
     <?php
-    echo    "<td><input type='submit' name='delete".$num."' value='刪除'></td>";
+    // echo    "<td><input type='button' name='delete".$num."' value='刪除'></td>";
+    // $_SESSION["delete$num"] = $_POST["delete$num"];
+    // $arr[] = $_SESSION["delete$num"];
+    $delete[]='delete'.$num;
+    $num++;
+    
+    
+print_r($delete);
+print_r($name);
+
+
+
+           
     ?>
     
-    </tr>  
-</form>
+
 <?php
-$num++;
-$delete[]='delete'.$num;
-$arr[]=$value['姓名'];
 }
-
-print_r($delete);
-print_r($arr);
-
-
-        for($i=0; $i<99; $i++){
-            if(isset($_POST["delete$i"])){
-                echo "delete".$i;
-                echo $arr[$i];
-                // $sqldelete = "DELETE FROM `employee` WHERE `姓名`="
-               }    
-            }
-        }
+}
+    if(!empty($_POST['delete'])){
+       
+          echo "刪除";
+      
+    }
+        
 ?>
+<tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><input type='button' name="delete" value='刪除'></td>
+        </tr>  
     
 
 </table> 
+
 
 
